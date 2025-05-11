@@ -1,18 +1,15 @@
-# tests/CMakeLists.txt
-
 add_executable(tests
     tests_main.cpp
     test_message.cpp
 )
 
-# ”казываем папку include/ проекта
 target_include_directories(tests
-    PRIVATE
-        ${CMAKE_SOURCE_DIR}/include
+    PRIVATE ${CMAKE_SOURCE_DIR}/include
 )
 
 target_link_libraries(tests
     PRIVATE
+        core_lib
         GTest::gtest_main
 )
 
